@@ -315,3 +315,36 @@ System memory in use after: 69.0 MB.
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1596.
 Total: 1.844100 ms (FindLiveObjects: 0.163100 ms CreateObjectMapping: 0.027100 ms MarkObjects: 1.596100 ms  DeleteObjects: 0.056700 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000744 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.693 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1112 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.9 MB.
+System memory in use after: 69.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1599.
+Total: 1.469000 ms (FindLiveObjects: 0.141200 ms CreateObjectMapping: 0.025800 ms MarkObjects: 1.249700 ms  DeleteObjects: 0.051100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2313.106413 seconds.
+  path: Assets/Player/HUD/Skins/ResourceSkin.guiskin
+  artifactKey: Guid(a2e834c9b70e6f84380fec1816aed65b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Player/HUD/Skins/ResourceSkin.guiskin using Guid(a2e834c9b70e6f84380fec1816aed65b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aafba1d30d94728310c031fdc9be8483') in 0.015252 seconds
+  Import took 0.017196 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
