@@ -1118,6 +1118,10 @@ MonoBehaviour:
   username: sodaus145
   human: 1
   hud: {fileID: 0}
+  startMoney: 0
+  startMoneyLimit: 0
+  startPower: 0
+  startPowerLimit: 0
 --- !u!4 &1737680671
 Transform:
   m_ObjectHideFlags: 0
@@ -1387,3 +1391,6 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4d4da92bf31682c4a9e15b1e9435aa48, type: 3}
   - {fileID: 2800000, guid: 2598b9304e16e69418bf7cb521fa3834, type: 3}
   mouseCursorSkin: {fileID: 11400000, guid: 47065a77e5db64a4899a84d22b9d248e, type: 2}
+  resources:
+  - {fileID: 2800000, guid: 685c75da61844e343a67becc0cdd1275, type: 3}
+  - {fileID: 2800000, guid: 356ea7a8a94f5334d97248d20040cb17, type: 3}
