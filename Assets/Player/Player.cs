@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         hud = GetComponentInChildren<HUD>();
+        print(startMoney);
         AddStartResourceLimits();
         AddStartResources();
     }

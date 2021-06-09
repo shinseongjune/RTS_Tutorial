@@ -1118,10 +1118,10 @@ MonoBehaviour:
   username: sodaus145
   human: 1
   hud: {fileID: 0}
-  startMoney: 0
-  startMoneyLimit: 0
-  startPower: 0
-  startPowerLimit: 0
+  startMoney: 1000
+  startMoneyLimit: 2000
+  startPower: 500
+  startPowerLimit: 500
 --- !u!4 &1737680671
 Transform:
   m_ObjectHideFlags: 0
