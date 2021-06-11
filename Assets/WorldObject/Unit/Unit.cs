@@ -37,9 +37,9 @@ public class Unit : WorldObject
     {
         base.SetHoverState(hoverObject);
         //only handle input if owned by a human player and currently selected
-        if(player && player.human && currentlySelected)
+        if (player && player.human && currentlySelected)
         {
-            if (hoverObject.name == "Ground") player.hud.SetCursorState(RTS.CursorState.Move);
+            if (hoverObject.name == "Ground") player.hud.SetCursorState(CursorState.Move);
         }
     }
 
@@ -47,9 +47,9 @@ public class Unit : WorldObject
     {
         base.MouseClick(hitObject, hitPoint, controller);
         //only handle input if owned by a human player and currently selected
-        if(player && player.human && currentlySelected)
+        if (player && player.human && currentlySelected)
         {
-            if(hitObject.name == "Ground" && hitPoint != ResourceManager.InvalidPosition)
+            if (hitObject.name == "Ground" && hitPoint != ResourceManager.InvalidPosition)
             {
                 float x = hitPoint.x;
                 //makes sure that the unit stays on top of the surface it is on
