@@ -242,8 +242,8 @@ MonoBehaviour:
   buildImage: {fileID: 2800000, guid: 11cce1464ed56744cb2c5cf7e76500bd, type: 3}
   cost: 200
   sellValue: 150
-  hitPoints: 0
-  maxHitPoints: 0
+  hitPoints: 600
+  maxHitPoints: 600
   maxBuildProgress: 5
   rallyPointImage: {fileID: 2800000, guid: e31973f938a5e724ba91ab03167e1e32, type: 3}
   sellImage: {fileID: 0}

@@ -37,6 +37,9 @@ public class HUD : MonoBehaviour
     public CursorState previousCursorState;
     public Texture2D rallyPointCursor;
 
+    public Texture2D healthy, damaged, critical;
+    public Texture2D[] resourceHealthBars;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +67,19 @@ public class HUD : MonoBehaviour
             }
         }
         buildAreaHeight = Screen.height - RESOURCE_BAR_HEIGHT - SELECTION_NAME_HEIGHT - 2 * BUTTON_SPACING;
+        ResourceManager.StoreSelectBoxItems(selectBoxSkin, healthy, damaged, critical);
+        Dictionary<ResourceType, Texture2D> resourceHealthBarTextures = new Dictionary<ResourceType, Texture2D>();
+        for (int i = 0; i < resourceHealthBars.Length; i++)
+        {
+            switch (resourceHealthBars[i].name)
+            {
+                case "ore":
+                    resourceHealthBarTextures.Add(ResourceType.Ore, resourceHealthBars[i]);
+                    break;
+                default: break;
+            }
+        }
+        ResourceManager.SetResourceHealthBarTextures(resourceHealthBarTextures);
     }
 
     void OnGUI()

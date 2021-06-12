@@ -145,10 +145,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Tank
   buildImage: {fileID: 2800000, guid: 52342d2d7a593a54f8a87609dfadbda1, type: 3}
-  cost: 0
-  sellValue: 0
-  hitPoints: 0
-  maxHitPoints: 0
+  cost: 100
+  sellValue: 50
+  hitPoints: 100
+  maxHitPoints: 100
   moveSpeed: 5
   rotateSpeed: 5
 --- !u!1 &4552835335666292009
