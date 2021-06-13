@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Refinery
-  buildImage: {fileID: 0}
+  buildImage: {fileID: 2800000, guid: a5fc487888c3fa04eb6064e0a938ef08, type: 3}
   cost: 100
   sellValue: 50
   hitPoints: 150
