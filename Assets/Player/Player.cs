@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private Unit tempCreator;
     private bool findingPlacement = false;
 
+    public Color teamColor;
+
     void Awake()
     {
         resources = InitResourceList();

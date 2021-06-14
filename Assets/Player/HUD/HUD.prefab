@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8693971403173781091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8693971403173781090}
+  - component: {fileID: 8693971403173781089}
+  m_Layer: 0
+  m_Name: HUD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8693971403173781090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693971403173781091}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.9887617, y: 7.66971, z: -6.291643}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8693971403173781089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693971403173781091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9934fce4a66fc644b93fcec1bf18e936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceSkin: {fileID: 11400000, guid: a2e834c9b70e6f84380fec1816aed65b, type: 2}
+  ordersSkin: {fileID: 11400000, guid: 83d06e92bc79bd646a455102d670c75e, type: 2}
+  selectBoxSkin: {fileID: 0}
+  activeCursor: {fileID: 0}
+  selectCursor: {fileID: 2800000, guid: d6a4e725908c1364ab454f1d77dbbaa9, type: 3}
+  leftCursor: {fileID: 2800000, guid: 0a479c63fd488494f9083f30be937429, type: 3}
+  rightCursor: {fileID: 2800000, guid: af2121678406daa4c8a8a6021679eb9c, type: 3}
+  upCursor: {fileID: 2800000, guid: e1ce850f93fd158469f2f7dfede37d87, type: 3}
+  downCursor: {fileID: 2800000, guid: d9a2dc7114354d64b8b5c3e8c3a7c94d, type: 3}
+  moveCursors:
+  - {fileID: 2800000, guid: ae51c9d7f79ce894e93087d479c45fda, type: 3}
+  - {fileID: 2800000, guid: 40efbe557b048ab4baddd29b587d095e, type: 3}
+  attackCursors:
+  - {fileID: 2800000, guid: ee8d945f394714240af8b27d6b457fc7, type: 3}
+  - {fileID: 2800000, guid: a79df2bfc028e9844b3f9649839b4ee2, type: 3}
+  harvestCursors:
+  - {fileID: 2800000, guid: 4d4da92bf31682c4a9e15b1e9435aa48, type: 3}
+  - {fileID: 2800000, guid: 2598b9304e16e69418bf7cb521fa3834, type: 3}
+  mouseCursorSkin: {fileID: 11400000, guid: 47065a77e5db64a4899a84d22b9d248e, type: 2}
+  resources:
+  - {fileID: 2800000, guid: 685c75da61844e343a67becc0cdd1275, type: 3}
+  - {fileID: 2800000, guid: 356ea7a8a94f5334d97248d20040cb17, type: 3}
+  buttonHover: {fileID: 2800000, guid: ad8d99e5db883984da62995af3cf762f, type: 3}
+  buttonClick: {fileID: 2800000, guid: 21455ddf736db3646b1978cc5c4ce9d1, type: 3}
+  buildFrame: {fileID: 2800000, guid: 68c3658024477bf4eb6e6173c0b9d2ea, type: 3}
+  buildMask: {fileID: 2800000, guid: b5a72507f5c49e742ac18ef0f2df7826, type: 3}
+  smallButtonHover: {fileID: 2800000, guid: 1e537c365f4c4e142bfad03e6d9be4dd, type: 3}
+  smallButtonClick: {fileID: 2800000, guid: 0ddd909b78d0d514c80d2c28304129cd, type: 3}
+  previousCursorState: 0
+  rallyPointCursor: {fileID: 2800000, guid: 2f2e82c9e8dcfd542a3bd001b487704e, type: 3}
+  healthy: {fileID: 2800000, guid: 054701eb242b64540b62319bf41110ae, type: 3}
+  damaged: {fileID: 2800000, guid: 98ca3c6114b102f40a7a601c779e5999, type: 3}
+  critical: {fileID: 2800000, guid: 7640d8355d300e84ba22ca756f19ffa7, type: 3}
+  resourceHealthBars:
+  - {fileID: 2800000, guid: 694a5ab7af736e44d9ad0b813a75aa9a, type: 3}
