@@ -40,6 +40,8 @@ public class HUD : MonoBehaviour
     public Texture2D healthy, damaged, critical;
     public Texture2D[] resourceHealthBars;
 
+    public GUISkin playerDetailsSkin;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,6 +88,7 @@ public class HUD : MonoBehaviour
     {
         if(player && player.human)
         {
+            DrawPlayerDetails();
             DrawOrdersBar();
             DrawResourcesBar();
             DrawMouseCursor();
@@ -379,5 +382,26 @@ public class HUD : MonoBehaviour
     public CursorState GetCursorState()
     {
         return activeCursorState;
+    }
+
+    private void DrawPlayerDetails()
+    {
+        GUI.skin = playerDetailsSkin;
+        GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height));
+        float height = ResourceManager.TextHeight;
+        float leftPos = ResourceManager.Padding;
+        float topPos = Screen.height - height - ResourceManager.Padding;
+        Texture2D avatar = PlayerManager.GetPlayerAvatar();
+        if (avatar)
+        {
+            //we want the texture to be drawn square at all times
+            GUI.DrawTexture(new Rect(leftPos, topPos, height, height), avatar);
+            leftPos += height + ResourceManager.Padding;
+        }
+        float minWidth = 0, maxWidth = 0;
+        string playerName = PlayerManager.GetPlayerName();
+        playerDetailsSkin.GetStyle("label").CalcMinMaxWidth(new GUIContent(playerName), out minWidth, out maxWidth);
+        GUI.Label(new Rect(leftPos, topPos, maxWidth, height), playerName);
+        GUI.EndGroup();
     }
 }

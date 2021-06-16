@@ -239,6 +239,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 960680450358938109}
     m_Modifications:
+    - target: {fileID: 8693971403173781089, guid: 56767d3232062c843b839fe3854d7279, type: 3}
+      propertyPath: playerDetailsSkin
+      value: 
+      objectReference: {fileID: 11400000, guid: 0da0c6af0f1101f469310e65dd11f0c5, type: 2}
     - target: {fileID: 8693971403173781090, guid: 56767d3232062c843b839fe3854d7279, type: 3}
       propertyPath: m_RootOrder
       value: 0
