@@ -37,8 +37,9 @@ namespace RTS
         public static float TextHeight { get { return textHeight; } }
         public static float Padding { get { return padding; } }
 
-
         public static bool MenuOpen { get; set; }
+
+        public static string LevelName { get; set; }
 
         public static void StoreSelectBoxItems(GUISkin skin)
         {
@@ -92,6 +93,13 @@ namespace RTS
         public static void SetResourceHealthBarTextures(Dictionary<ResourceType, Texture2D> images)
         {
             resourceHealthBarTextures = images;
+        }
+
+        public static int GetNewObjectId()
+        {
+            LevelLoader loader = (LevelLoader)GameObject.FindObjectOfType(typeof(LevelLoader));
+            if (loader) return loader.GetNewObjectId();
+            return -1;
         }
     }
 }

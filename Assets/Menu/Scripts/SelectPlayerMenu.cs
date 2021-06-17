@@ -84,6 +84,12 @@ public class SelectPlayerMenu : MonoBehaviour
             avatarIndex = PlayerManager.GetAvatar(playerName);
         }
 
+        if (SelectionList.MouseDoubleClick())
+        {
+            playerName = SelectionList.GetCurrentEntry();
+            SelectPlayer();
+        }
+
         GUI.EndGroup();
     }
 

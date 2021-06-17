@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RTS;
+using Newtonsoft.Json;
 
 public class Player : MonoBehaviour
 {
@@ -82,6 +83,7 @@ public class Player : MonoBehaviour
         if (unitObject)
         {
             unitObject.SetBuilding(creator);
+            unitObject.ObjectId = ResourceManager.GetNewObjectId();
             if (spawnPoint != rallyPoint) unitObject.StartMove(rallyPoint);
         }
     }
@@ -93,6 +95,7 @@ public class Player : MonoBehaviour
         if (tempBuilding)
         {
             tempCreator = creator;
+            tempBuilding.ObjectId = ResourceManager.GetNewObjectId();
             findingPlacement = true;
             tempBuilding.SetTransparentMaterial(notAllowedMaterial, true);
             tempBuilding.SetColliders(false);
@@ -166,5 +169,15 @@ public class Player : MonoBehaviour
         Destroy(tempBuilding.gameObject);
         tempBuilding = null;
         tempCreator = null;
+    }
+
+    public virtual void SaveDetails(JsonWriter writer)
+    {
+        SaveManager.WriteString(writer, "Username", username);
+        SaveManager.WriteBoolean(writer, "Human", human);
+        SaveManager.WriteColor(writer, "TeamColor", teamColor);
+        SaveManager.SavePlayerResources(writer, resources);
+        SaveManager.SavePlayerBuildings(writer, GetComponentsInChildren<Building>());
+        SaveManager.SavePlayerUnits(writer, GetComponentsInChildren<Unit>());
     }
 }
