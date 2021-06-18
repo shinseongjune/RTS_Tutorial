@@ -8,11 +8,12 @@ public class SaveMenu : MonoBehaviour
 
     private string saveName = "NewGame";
 
-    private ConfirmDialog confirmDialog;
+    public ConfirmDialog confirmDialog;
 
     void Start()
     {
         Activate();
+        confirmDialog = GetComponent<ConfirmDialog>();
     }
 
     void Update()

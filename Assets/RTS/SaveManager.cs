@@ -258,5 +258,43 @@ namespace RTS
             }
             writer.WriteEndArray();
         }
+
+        public static void SavePlayerResources(JsonWriter writer, Dictionary<ResourceType, int> resources, Dictionary<ResourceType, int> resourceLimits)
+        {
+            if (writer == null) return;
+
+            writer.WritePropertyName("Resources");
+            writer.WriteStartArray();
+            foreach (KeyValuePair<ResourceType, int> pair in resources)
+            {
+                writer.WriteStartObject();
+                WriteInt(writer, pair.Key.ToString(), pair.Value);
+                writer.WriteEndObject();
+            }
+            foreach (KeyValuePair<ResourceType, int> pair in resourceLimits)
+            {
+                writer.WriteStartObject();
+                WriteInt(writer, pair.Key.ToString() + "_Limit", pair.Value);
+                writer.WriteEndObject();
+            }
+            writer.WriteEndArray();
+        }
+
+        public static void WriteRect(JsonWriter writer, string name, Rect rect)
+        {
+            if (writer == null) return;
+
+            writer.WritePropertyName(name);
+            writer.WriteStartObject();
+            writer.WritePropertyName("x");
+            writer.WriteValue(rect.x);
+            writer.WritePropertyName("y");
+            writer.WriteValue(rect.y);
+            writer.WritePropertyName("width");
+            writer.WriteValue(rect.width);
+            writer.WritePropertyName("height");
+            writer.WriteValue(rect.height);
+            writer.WriteEndObject();
+        }
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ConfirmDialog
+public class ConfirmDialog : MonoBehaviour
 {
 
     private bool confirming = false, clickYes = false, clickNo = false;

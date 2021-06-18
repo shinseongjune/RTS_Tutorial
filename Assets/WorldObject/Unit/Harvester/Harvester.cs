@@ -16,12 +16,34 @@ public class Harvester : Unit
 
     private float currentDeposit = 0.0f;
 
+    private int loadedDepositId = -1, loadedStoreId = -1;
+
+
     /*** Game Engine methods, all can be overridden by subclass ***/
 
     protected override void Start()
     {
         base.Start();
-        harvestType = ResourceType.Unknown;
+        if (loadedSavedValues)
+        {
+            if (player)
+            {
+                if (loadedStoreId >= 0)
+                {
+                    WorldObject obj = player.GetObjectForId(loadedStoreId);
+                    if (obj.GetType().IsSubclassOf(typeof(Building))) resourceStore = (Building)obj;
+                }
+                if (loadedDepositId >= 0)
+                {
+                    WorldObject obj = player.GetObjectForId(loadedDepositId);
+                    if (obj.GetType().IsSubclassOf(typeof(Resource))) resourceDeposit = (Resource)obj;
+                }
+            }
+        }
+        else
+        {
+            harvestType = ResourceType.Unknown;
+        }
     }
 
     protected override void Update()
@@ -73,7 +95,7 @@ public class Harvester : Unit
         //only handle input if owned by a human player and currently selected
         if (player && player.human && currentlySelected)
         {
-            if (hoverObject.name != "Ground")
+            if (!WorkManager.ObjectIsGround(hoverObject))
             {
                 Resource resource = hoverObject.transform.parent.GetComponent<Resource>();
                 if (resource && !resource.isEmpty()) player.hud.SetCursorState(CursorState.Harvest);
@@ -87,7 +109,7 @@ public class Harvester : Unit
         //only handle input if owned by a human player
         if (player && player.human)
         {
-            if (hitObject.name != "Ground")
+            if (!WorkManager.ObjectIsGround(hitObject))
             {
                 Resource resource = hitObject.transform.parent.GetComponent<Resource>();
                 if (resource && !resource.isEmpty())
@@ -175,5 +197,21 @@ public class Harvester : Unit
         SaveManager.WriteString(writer, "HarvestType", harvestType.ToString());
         if (resourceDeposit) SaveManager.WriteInt(writer, "ResourceDepositId", resourceDeposit.ObjectId);
         if (resourceStore) SaveManager.WriteInt(writer, "ResourceStoreId", resourceStore.ObjectId);
+    }
+
+    protected override void HandleLoadedProperty(JsonTextReader reader, string propertyName, object readValue)
+    {
+        base.HandleLoadedProperty(reader, propertyName, readValue);
+        switch (propertyName)
+        {
+            case "Harvesting": harvesting = (bool)readValue; break;
+            case "Emptying": emptying = (bool)readValue; break;
+            case "CurrentLoad": currentLoad = (float)(double)readValue; break;
+            case "CurrentDeposit": currentDeposit = (float)(double)readValue; break;
+            case "HarvestType": harvestType = WorkManager.GetResourceType((string)readValue); break;
+            case "ResourceDepositId": loadedDepositId = (int)(System.Int64)readValue; break;
+            case "ResourceStoreId": loadedStoreId = (int)(System.Int64)readValue; break;
+            default: break;
+        }
     }
 }
