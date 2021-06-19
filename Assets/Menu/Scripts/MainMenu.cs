@@ -13,6 +13,7 @@ public class MainMenu : Menu
 
     protected override void HandleButton(string text)
     {
+        base.HandleButton(text);
         switch (text)
         {
             case "New Game": NewGame(); break;
@@ -51,6 +52,11 @@ public class MainMenu : Menu
             GetComponent<MainMenu>().enabled = true;
             GetComponent<SelectPlayerMenu>().enabled = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void ChangePlayer()

@@ -76,6 +76,11 @@ namespace RTS
             return gameObjectList.GetBuildImage(name);
         }
 
+        public static Texture2D[] GetAvatars()
+        {
+            return gameObjectList.GetAvatars();
+        }
+
         public static void StoreSelectBoxItems(GUISkin skin, Texture2D healthy, Texture2D damaged, Texture2D critical)
         {
             selectBoxSkin = skin;

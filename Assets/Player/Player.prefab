@@ -15,6 +15,20 @@ MonoBehaviour:
   mySkin: {fileID: 0}
   selectionSkin: {fileID: 11400000, guid: 7224a659f753b6e40bfc83ed63e7cc72, type: 2}
   confirmDialog: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: 59b72ed0fc5459e4a879a62c2da39f4a, type: 3}
+  clickVolume: 1
+--- !u!114 &4432189815741680492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960680450025154754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05bd9743a3c93d4dabf15a5e6a4be47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4942359230729237548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29,6 +43,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySkin: {fileID: 11400000, guid: 271e934847679194dbc8900e566071d2, type: 2}
   header: {fileID: 2800000, guid: 39d09ee327b05cf44a917cc19859e87b, type: 3}
+  clickSound: {fileID: 8300000, guid: 59b72ed0fc5459e4a879a62c2da39f4a, type: 3}
+  clickVolume: 1
 --- !u!114 &5372466926737400856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,18 +59,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainSkin: {fileID: 11400000, guid: 271e934847679194dbc8900e566071d2, type: 2}
   selectionSkin: {fileID: 11400000, guid: 7224a659f753b6e40bfc83ed63e7cc72, type: 2}
---- !u!114 &4432189815741680492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960680450025154754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d05bd9743a3c93d4dabf15a5e6a4be47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 59b72ed0fc5459e4a879a62c2da39f4a, type: 3}
+  clickVolume: 1
 --- !u!1 &960680450355705971
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +286,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 960680450358938109}
     m_Modifications:
+    - target: {fileID: 8693971403173781089, guid: 56767d3232062c843b839fe3854d7279, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 59b72ed0fc5459e4a879a62c2da39f4a, type: 3}
     - target: {fileID: 8693971403173781089, guid: 56767d3232062c843b839fe3854d7279, type: 3}
       propertyPath: playerDetailsSkin
       value: 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4677643016327564164}
   - component: {fileID: 4677643016327564165}
   m_Layer: 0
-  m_Name: Refinery 1
+  m_Name: Refinery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,9 +51,20 @@ MonoBehaviour:
   sellValue: 50
   hitPoints: 150
   maxHitPoints: 150
+  weaponRange: 10
+  weaponRechargeTime: 1
+  weaponAimSpeed: 1
+  attackSound: {fileID: 8300000, guid: 82443239104d8ce4599641e1dc2ac909, type: 3}
+  selectSound: {fileID: 8300000, guid: 0b4b8b35dfb5bb64dbe674b26cd2179f, type: 3}
+  useWeaponSound: {fileID: 8300000, guid: 82c4a142947c5d74f8b84531173ab1d9, type: 3}
+  attackVolume: 1
+  selectVolume: 1
+  useWeaponVolume: 1
   maxBuildProgress: 5
   rallyPointImage: {fileID: 2800000, guid: e31973f938a5e724ba91ab03167e1e32, type: 3}
   sellImage: {fileID: 2800000, guid: bcec1c5e6fa07ba489196e016255b01f, type: 3}
+  finishedJobSound: {fileID: 8300000, guid: b642761ca1fa07044a65142c9493450e, type: 3}
+  finishedJobVolume: 1
 --- !u!1 &6882096786130951417
 GameObject:
   m_ObjectHideFlags: 0

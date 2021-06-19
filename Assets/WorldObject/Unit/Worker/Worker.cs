@@ -1,6 +1,7 @@
 using Newtonsoft.Json;
 using RTS;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Worker : Unit
 {
@@ -12,6 +13,9 @@ public class Worker : Unit
     private float amountBuilt = 0.0f;
 
     private int loadedProjectId = -1;
+
+    public AudioClip finishedJobSound;
+    public float finishedJobVolume = 1.0f;
 
     /*** Game Engine methods, all can be overridden by subclass ***/
 
@@ -33,6 +37,7 @@ public class Worker : Unit
         {
             if (building && currentProject && currentProject.UnderConstruction())
             {
+                if (audioElement != null) audioElement.Play(finishedJobSound);
                 amountBuilt += buildSpeed * Time.deltaTime;
                 int amount = Mathf.FloorToInt(amountBuilt);
                 if (amount > 0)
@@ -111,5 +116,17 @@ public class Worker : Unit
             case "CurrentProjectId": loadedProjectId = (int)(System.Int64)readValue; break;
             default: break;
         }
+    }
+
+    protected override void InitialiseAudio()
+    {
+        base.InitialiseAudio();
+        if (finishedJobVolume < 0.0f) finishedJobVolume = 0.0f;
+        if (finishedJobVolume > 1.0f) finishedJobVolume = 1.0f;
+        List<AudioClip> sounds = new List<AudioClip>();
+        List<float> volumes = new List<float>();
+        sounds.Add(finishedJobSound);
+        volumes.Add(finishedJobVolume);
+        audioElement.Add(sounds, volumes);
     }
 }

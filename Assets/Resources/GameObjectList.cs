@@ -12,10 +12,14 @@ public class GameObjectList : MonoBehaviour
 
     private static bool created = false;
 
+    public Texture2D[] avatars;
+
     void Awake()
     {
         if(!created)
         {
+            PlayerManager.Load();
+            PlayerManager.SetAvatarTextures(avatars);
             DontDestroyOnLoad(transform.gameObject);
             ResourceManager.SetGameObjectList(this);
             created = true;
@@ -73,5 +77,10 @@ public class GameObjectList : MonoBehaviour
             if (unit && unit.name == name) return unit.buildImage;
         }
         return null;
+    }
+
+    public Texture2D[] GetAvatars()
+    {
+        return avatars;
     }
 }

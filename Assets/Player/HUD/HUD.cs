@@ -42,6 +42,11 @@ public class HUD : MonoBehaviour
 
     public GUISkin playerDetailsSkin;
 
+    public AudioClip clickSound;
+    public float clickVolume = 1.0f;
+
+    private AudioElement audioElement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,6 +87,11 @@ public class HUD : MonoBehaviour
             }
         }
         ResourceManager.SetResourceHealthBarTextures(resourceHealthBarTextures);
+        List<AudioClip> sounds = new List<AudioClip>();
+        List<float> volumes = new List<float>();
+        sounds.Add(clickSound);
+        volumes.Add(clickVolume);
+        audioElement = new AudioElement(sounds, volumes, "HUD", null);
     }
 
     void OnGUI()
@@ -146,6 +156,7 @@ public class HUD : MonoBehaviour
 
         if (GUI.Button(menuButtonPosition, "Menu"))
         {
+            PlayClick();
             Time.timeScale = 0.0f;
             PauseMenu pauseMenu = GetComponent<PauseMenu>();
             if (pauseMenu) pauseMenu.enabled = true;
@@ -307,7 +318,11 @@ public class HUD : MonoBehaviour
                 //create the button and handle the click of that button
                 if(GUI.Button(pos, action))
                 {
-                    if (player.SelectedObject) player.SelectedObject.PerformAction(actions[i]);
+                    if (player.SelectedObject)
+                    {
+                        PlayClick();
+                        player.SelectedObject.PerformAction(actions[i]);
+                    }
                 }
             }
         }
@@ -372,6 +387,7 @@ public class HUD : MonoBehaviour
         {
             if(GUI.Button(new Rect(leftPos, topPos, width, height), building.rallyPointImage))
             {
+                PlayClick();
                 if (activeCursorState != CursorState.RallyPoint && previousCursorState != CursorState.RallyPoint) SetCursorState(CursorState.RallyPoint);
                 else
                 {
@@ -383,6 +399,7 @@ public class HUD : MonoBehaviour
             leftPos += width + BUTTON_SPACING;
             if (GUI.Button(new Rect(leftPos, topPos, width, height), building.sellImage))
             {
+                PlayClick();
                 building.Sell();
             }
         }
@@ -417,5 +434,10 @@ public class HUD : MonoBehaviour
         playerDetailsSkin.GetStyle("label").CalcMinMaxWidth(new GUIContent(playerName), out minWidth, out maxWidth);
         GUI.Label(new Rect(leftPos, topPos, maxWidth, height), playerName);
         GUI.EndGroup();
+    }
+
+    private void PlayClick()
+    {
+        if (audioElement != null) audioElement.Play(clickSound);
     }
 }

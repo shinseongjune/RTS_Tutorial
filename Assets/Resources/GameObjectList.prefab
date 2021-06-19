@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6079653434696242499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6079653434696242501}
+  - component: {fileID: 6079653434696242500}
+  m_Layer: 0
+  m_Name: GameObjectList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6079653434696242501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6079653434696242499}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.1088805, y: 24.599024, z: -21.707022}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6079653434696242500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6079653434696242499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4df557ea72b99840bc754d7201d57f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildings:
+  - {fileID: 4677643016327564186, guid: cb17670e0a3c96c488b3fce55aaa95fa, type: 3}
+  - {fileID: 152785770939562676, guid: 597e387ff42adf542a23a6f03a89a83d, type: 3}
+  units:
+  - {fileID: 4414108019389439081, guid: a178718bbf180f54286f034b82dfb27f, type: 3}
+  - {fileID: 5911078586266837365, guid: edcc3c48b42a1d94986be78c8cafe0b0, type: 3}
+  - {fileID: 2103982542163444422, guid: 06f24ab3adf80374b878d4be1eb89f6b, type: 3}
+  worldObjects:
+  - {fileID: 1753877754903260178, guid: 4b105f1758cdbca48a3948fb02495e12, type: 3}
+  - {fileID: 216057116763110817, guid: 79edf8a86948bc7428c4b8561d692979, type: 3}
+  - {fileID: 7745059363773961381, guid: b98f8f63984595245b70bae54c7e5d15, type: 3}
+  player: {fileID: 960680450358938110, guid: fa7dd47a5d6468044b685df1079181bb, type: 3}
+  avatars:
+  - {fileID: 2800000, guid: 2e7c2c91a440ec243a9c2b20a34745e0, type: 3}
+  - {fileID: 2800000, guid: b9c1786fed5aba243b3aab9ad1e29b93, type: 3}
+  - {fileID: 2800000, guid: ac1d1f10b679b5d49ab2ac362d9155e6, type: 3}
+  - {fileID: 2800000, guid: 490a48c0fb1415848b3505da3909787f, type: 3}
+  - {fileID: 2800000, guid: 64dd9f66e0258ef45a609038e254a74c, type: 3}
+  - {fileID: 2800000, guid: 3b4b65835453f314f80a0b47d8db9926, type: 3}
