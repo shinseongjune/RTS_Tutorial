@@ -61,6 +61,21 @@ MonoBehaviour:
   selectionSkin: {fileID: 11400000, guid: 7224a659f753b6e40bfc83ed63e7cc72, type: 2}
   clickSound: {fileID: 8300000, guid: 59b72ed0fc5459e4a879a62c2da39f4a, type: 3}
   clickVolume: 1
+--- !u!114 &3118561453350056218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960680450025154754}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07c3f574e7afce41a83632df3e49d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skin: {fileID: 11400000, guid: 271e934847679194dbc8900e566071d2, type: 2}
+  clickSound: {fileID: 8300000, guid: 59b72ed0fc5459e4a879a62c2da39f4a, type: 3}
+  clickVolume: 1
 --- !u!1 &960680450355705971
 GameObject:
   m_ObjectHideFlags: 0

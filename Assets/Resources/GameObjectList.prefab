@@ -46,14 +46,18 @@ MonoBehaviour:
   buildings:
   - {fileID: 4677643016327564186, guid: cb17670e0a3c96c488b3fce55aaa95fa, type: 3}
   - {fileID: 152785770939562676, guid: 597e387ff42adf542a23a6f03a89a83d, type: 3}
+  - {fileID: 6277155513524337348, guid: 7124d9fd8342c544080720724b69c684, type: 3}
+  - {fileID: 4211317686982601624, guid: 7f1c89f619382894e82e6cd96bf6ef5f, type: 3}
   units:
   - {fileID: 4414108019389439081, guid: a178718bbf180f54286f034b82dfb27f, type: 3}
   - {fileID: 5911078586266837365, guid: edcc3c48b42a1d94986be78c8cafe0b0, type: 3}
   - {fileID: 2103982542163444422, guid: 06f24ab3adf80374b878d4be1eb89f6b, type: 3}
+  - {fileID: 7978404277623388260, guid: 1fecfecc2c2b6834c802933d990bc92d, type: 3}
   worldObjects:
   - {fileID: 1753877754903260178, guid: 4b105f1758cdbca48a3948fb02495e12, type: 3}
   - {fileID: 216057116763110817, guid: 79edf8a86948bc7428c4b8561d692979, type: 3}
   - {fileID: 7745059363773961381, guid: b98f8f63984595245b70bae54c7e5d15, type: 3}
+  - {fileID: 6642836373410111794, guid: 2949b0a54d30bf3408373c516f08c93c, type: 3}
   player: {fileID: 960680450358938110, guid: fa7dd47a5d6468044b685df1079181bb, type: 3}
   avatars:
   - {fileID: 2800000, guid: 2e7c2c91a440ec243a9c2b20a34745e0, type: 3}

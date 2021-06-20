@@ -61,7 +61,7 @@ public class Harvester : Unit
                 if (harvesting)
                 {
                     Collect();
-                    if (currentLoad >= capacity || resourceDeposit.isEmpty())
+                    if (currentLoad >= capacity)
                     {
                         //make sure that we have a whole number to avoid bugs
                         //caused by floating point numbers
@@ -152,17 +152,27 @@ public class Harvester : Unit
 
     private void Collect()
     {
-        if (audioElement != null) audioElement.Play(harvestSound);
+        if (audioElement != null && Time.timeScale > 0) audioElement.Play(harvestSound);
         float collect = collectionAmount * Time.deltaTime;
         //make sure that the harvester cannot collect more than it can carry
         if (currentLoad + collect > capacity) collect = capacity - currentLoad;
-        resourceDeposit.Remove(collect);
+        if (resourceDeposit.isEmpty())
+        {
+            Arms[] arms = GetComponentsInChildren<Arms>();
+            foreach (Arms arm in arms) arm.GetComponent<Renderer>().enabled = false;
+            DecideWhatToDo();
+        }
+        else
+        {
+            resourceDeposit.Remove(collect);
+        }
         currentLoad += collect;
     }
 
     private void Deposit()
     {
-        if (audioElement != null) audioElement.Play(emptyHarvestSound);
+        currentLoad = Mathf.Floor(currentLoad);
+        if (audioElement != null && Time.timeScale > 0) audioElement.Play(emptyHarvestSound);
         currentDeposit += depositAmount * Time.deltaTime;
         int deposit = Mathf.FloorToInt(currentDeposit);
         if (deposit >= 1)
@@ -239,5 +249,42 @@ public class Harvester : Unit
         sounds.Add(startHarvestSound);
         volumes.Add(startHarvestVolume);
         audioElement.Add(sounds, volumes);
+    }
+
+    protected override bool ShouldMakeDecision()
+    {
+        if (harvesting || emptying) return false;
+        return base.ShouldMakeDecision();
+    }
+
+    protected override void DecideWhatToDo()
+    {
+        base.DecideWhatToDo();
+        List<WorldObject> resources = new List<WorldObject>();
+        foreach (WorldObject nearbyObject in nearbyObjects)
+        {
+            Resource resource = nearbyObject.GetComponent<Resource>();
+            if (resource && !resource.isEmpty()) resources.Add(nearbyObject);
+        }
+        WorldObject nearestObject = WorkManager.FindNearestWorldObjectInListToPosition(resources, transform.position);
+        if (nearestObject)
+        {
+            Resource closestResource = nearestObject.GetComponent<Resource>();
+            if (closestResource) StartHarvest(closestResource);
+        }
+        else if (harvesting)
+        {
+            harvesting = false;
+            if (currentLoad > 0.0f)
+            {
+                //make sure that we have a whole number to avoid bugs
+                //caused by floating point numbers
+                currentLoad = Mathf.Floor(currentLoad);
+                emptying = true;
+                Arms[] arms = GetComponentsInChildren<Arms>();
+                foreach (Arms arm in arms) arm.GetComponent<Renderer>().enabled = false;
+                StartMove(resourceStore.transform.position, resourceStore.gameObject);
+            }
+        }
     }
 }
